@@ -26,11 +26,21 @@ const useGlobalStyles = createUseStyles({
       flex: 1,
       display: 'grid',
       gridTemplateColumns: 'repeat(12, 1fr)',
+      gridTemplateRows: '100%',
       columnGap: 12,
     },
 
     ul: {
       listStyle: 'none',
+    },
+
+    input: {
+      border: 0,
+    },
+
+    button: {
+      border: 0,
+      cursor: 'pointer',
     },
   },
 
