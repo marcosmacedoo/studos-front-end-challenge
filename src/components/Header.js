@@ -1,6 +1,7 @@
 import React from 'react'
 import { useGlobalStyles } from '../styles/Global'
 import { useHeaderStyles } from '../styles/components/Header'
+import { ToggleButton } from '../components/ToggleButton'
 import Profile from '../assets/profile.svg'
 
 function Header() {
@@ -15,6 +16,7 @@ function Header() {
       </div>
       <div>
         <strong>Modo escuro</strong>
+        <ToggleButton />
       </div>
     </header>
   )
