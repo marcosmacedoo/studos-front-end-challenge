@@ -9,25 +9,16 @@ const useGlobalStyles = createUseStyles({
       fontFamily: 'Roboto, sans-serif',
     },
 
-    '#root, body': {
-      minHeight: '100vh',
-    },
-
-    '#root': {
-      display: 'flex',
-      flexDirection: 'column',
+    'html, body, #root': {
+      height: '100%',
     },
 
     body: {
       background: 'white',
     },
 
-    main: {
-      flex: 1,
-      display: 'grid',
-      gridTemplateColumns: 'repeat(12, 1fr)',
-      gridTemplateRows: '100%',
-      columnGap: 12,
+    '#root': {
+      display: 'flex',
     },
 
     ul: {
@@ -42,12 +33,49 @@ const useGlobalStyles = createUseStyles({
       border: 0,
       cursor: 'pointer',
     },
+
+    '@media(max-width: 1024px)': {
+      html: {
+        fontSize: '93%',
+      },
+    },
+
+    '@media(max-width: 900px)': {
+      html: {
+        fontSize: '90%',
+      },
+    },
+
+    '@media(max-width: 768px)': {
+      html: {
+        fontSize: '87.5%',
+      },
+    },
+
+    '@media(max-width: 375px)': {
+      html: {
+        fontSize: '75%',
+      },
+    },
   },
 
   container: {
-    maxWidth: 1140,
-    width: '100%',
     margin: '0 auto',
+    width: 'min(1140px, 95vw)',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(12, 1fr)',
+    gridTemplateRows: 'auto 1fr auto',
+    columnGap: '0.75rem',
+
+    '@media (max-width: 900px)': {
+      width: '75vw',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+
+    '@media (max-width: 768px)': {
+      width: '90vw',
+    },
   },
 })
 

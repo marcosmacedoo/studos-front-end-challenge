@@ -1,20 +1,20 @@
 import React from 'react'
 import { Header } from './components/Header'
 import { NavBar } from './components/NavBar'
-import { Tasks } from './components/Tasks'
+import { Aside } from './components/Aside'
+import { Footer } from './components/Footer'
 import { useGlobalStyles } from './styles/Global'
 
 function App() {
   const classesGlobal = useGlobalStyles()
 
   return (
-    <>
+    <main className={classesGlobal.container}>
       <Header />
-      <main className={classesGlobal.container}>
-        <NavBar />
-        <Tasks />
-      </main>
-    </>
+      <NavBar />
+      <Aside />
+      <Footer />
+    </main>
   )
 }
 

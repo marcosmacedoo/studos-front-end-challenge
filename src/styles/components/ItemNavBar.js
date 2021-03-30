@@ -1,44 +1,49 @@
 import { createUseStyles } from 'react-jss'
-import BackgroundImageLargeBlueLight from '../../assets/bg-large-blue-light.svg'
-import BackgroundImageLargeBlue from '../../assets/bg-large-blue.svg'
-import BackgroundImageLargeOrange from '../../assets/bg-large-orange.svg'
-import BackgroundImageLargeCyan from '../../assets/bg-large-cyan.svg'
-
-function getBackgroundImage(props) {
-  if (props.isBgBlueLight) {
-    return BackgroundImageLargeBlueLight
-  } else if (props.isBgBlue) {
-    return BackgroundImageLargeBlue
-  } else if (props.isBgOrange) {
-    return BackgroundImageLargeOrange
-  } else if (props.isBgCyan) {
-    return BackgroundImageLargeCyan
-  }
-}
 
 const useItemNavBarStyles = createUseStyles({
-  itemNavBar: props => ({
-    padding: 48,
+  itemNavBar: {
     width: '100%',
-    height: 138,
-    borderRadius: 6,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundImage: `url(${getBackgroundImage(props)})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    height: '8.625rem',
+    position: 'relative',
+    cursor: 'pointer',
 
     '&:not(:first-child)': {
-      marginTop: 20,
+      marginTop: '1.25rem',
     },
 
-    '& > strong': {
-      fontSize: 18,
-      color: '#fff',
-      maxWidth: 80,
+    '& > img': {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      objectPosition: 'right',
+      borderRadius: 6,
     },
-  }),
+
+    '& > div': {
+      padding: '0 3rem',
+      width: '100%',
+      height: '100%',
+      position: 'absolute',
+      top: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+
+      '& > strong': {
+        fontSize: '1.125rem',
+        color: '#fff',
+        maxWidth: '5rem',
+      },
+
+      '@media(max-width: 320px)': {
+        padding: '0 1.5rem',
+      },
+    },
+
+    '@media (max-width: 960px)': {
+      height: '7.5rem',
+    },
+  },
 })
 
 export { useItemNavBarStyles }
