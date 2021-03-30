@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.js": "/static/js/main.45a97ec8.chunk.js",
+    "main.js.map": "/static/js/main.45a97ec8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ecd80d1c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ecd80d1c.js.map",
+    "static/js/2.87241d21.chunk.js": "/static/js/2.87241d21.chunk.js",
+    "static/js/2.87241d21.chunk.js.map": "/static/js/2.87241d21.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.87241d21.chunk.js.LICENSE.txt": "/static/js/2.87241d21.chunk.js.LICENSE.txt",
+    "static/media/android.25655ccb.svg": "/static/media/android.25655ccb.svg",
+    "static/media/apple.816f67af.svg": "/static/media/apple.816f67af.svg",
+    "static/media/arrow-right.5731a78c.svg": "/static/media/arrow-right.5731a78c.svg",
+    "static/media/bg-large-blue-light.6147fed1.svg": "/static/media/bg-large-blue-light.6147fed1.svg",
+    "static/media/bg-large-blue.c193ddff.svg": "/static/media/bg-large-blue.c193ddff.svg",
+    "static/media/bg-large-cyan.24481baa.svg": "/static/media/bg-large-cyan.24481baa.svg",
+    "static/media/bg-large-orange.fa817a52.svg": "/static/media/bg-large-orange.fa817a52.svg",
+    "static/media/bg-small-blue.0a70f642.svg": "/static/media/bg-small-blue.0a70f642.svg",
+    "static/media/profile.4582b145.svg": "/static/media/profile.4582b145.svg",
+    "static/media/search-small.9069d867.svg": "/static/media/search-small.9069d867.svg",
+    "static/media/success-cloud.4f802ec5.svg": "/static/media/success-cloud.4f802ec5.svg",
+    "static/media/timer.25abf1da.svg": "/static/media/timer.25abf1da.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ecd80d1c.js",
+    "static/js/2.87241d21.chunk.js",
+    "static/js/main.45a97ec8.chunk.js"
+  ]
+}
