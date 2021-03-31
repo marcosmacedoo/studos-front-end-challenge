@@ -4,14 +4,14 @@ import { useToogleButtonStyle } from '../styles/components/ToggleButton'
 function ToggleButton() {
   const classesToogleButton = useToogleButtonStyle()
 
+  const changeTheme = () => {}
+
   return (
-    <div
-      className={classesToogleButton.containerToogleButton}
-      id="toggle-button"
-    >
-      <button className={classesToogleButton.toogleButton}></button>
-      <span className={classesToogleButton.ball}></span>
-    </div>
+    <button className={classesToogleButton.toggleButton} onClick={changeTheme}>
+      <div>
+        <span></span>
+      </div>
+    </button>
   )
 }
 
