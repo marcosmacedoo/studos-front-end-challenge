@@ -14,7 +14,7 @@ function Aside() {
         <div className={classesAside.inputGroup}>
           <input type="text" placeholder="Pesquisar" />
           <button>
-            <img src={IconSearchSmall} alt="Lupa" />
+            <img src={IconSearchSmall} alt="Ícone de lupa" />
           </button>
         </div>
 

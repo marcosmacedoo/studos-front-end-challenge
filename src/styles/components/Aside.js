@@ -43,11 +43,13 @@ const useAsideStyles = createUseStyles({
 
     '& > button': {
       position: 'absolute',
-      right: 0,
+      right: 1,
       height: '2.6875rem',
       width: '2.6875rem',
       background: '#F8F8F8',
       borderLeft: '1px solid #D5D5D5',
+      borderTopRightRadius: 6,
+      borderBottomRightRadius: 6,
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
