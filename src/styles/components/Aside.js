@@ -1,5 +1,4 @@
 import { createUseStyles } from 'react-jss'
-import BgSmallBlue from '../../assets/bg-small-blue.svg'
 
 const useAsideStyles = createUseStyles({
   tasks: {
@@ -104,74 +103,6 @@ const useAsideStyles = createUseStyles({
 
   tabActive: {
     color: '#339CF7',
-  },
-
-  cardTask: {
-    padding: 12,
-    marginBottom: 12,
-    height: '9.375rem',
-    backgroundImage: `url(${BgSmallBlue})`,
-    backgroundSize: 'cover',
-    borderRadius: 6,
-    color: '#fff',
-
-    '& > header': {
-      display: 'flex',
-      justifyContent: 'space-between',
-
-      '& > div': {
-        background: '#E65353',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-
-        '& > img': {
-          marginRight: '0.5rem',
-        },
-
-        '& > span': {
-          fontSize: '0.875rem',
-        },
-      },
-    },
-
-    '& main': {
-      margin: '1rem 0',
-
-      '& h3': {
-        fontSize: '1rem',
-        fontWeight: 'bold',
-      },
-    },
-
-    '& > footer': {
-      display: 'flex',
-      flexDirection: 'column',
-      fontSize: '0.875rem',
-
-      '& > div': {
-        marginTop: 4,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-
-        '@media(max-width: 375px)': {
-          marginTop: 0,
-        },
-      },
-    },
-
-    '@media(max-width: 900px)': {
-      display: 'flex',
-      flexDirection: 'column',
-
-      '& > main': {
-        margin: 0,
-        flex: 2,
-        display: 'flex',
-        alignItems: 'center',
-      },
-    },
   },
 })
 

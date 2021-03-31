@@ -1,8 +1,7 @@
 import React from 'react'
 import { useAsideStyles } from '../styles/components/Aside'
+import { TaskCard } from '../components/TaskCard'
 import IconSearchSmall from '../assets/search-small.svg'
-import IconTimer from '../assets/timer.svg'
-import IconSuccessCloud from '../assets/success-cloud.svg'
 
 function Aside() {
   const classesAside = useAsideStyles()
@@ -31,50 +30,13 @@ function Aside() {
 
         <ul>
           <li>
-            <div className={classesAside.cardTask}>
-              <header>
-                <div>
-                  <img src={IconTimer} alt="Relógio" />
-                  <span>Até 02/06 8h30</span>
-                </div>
-                <img src={IconSuccessCloud} alt="Nuvem" />
-              </header>
-              <main>
-                <h3>
-                  Lista 03 - Física Moderna - Modulo 1 - Modulo 2 - Aula 4
-                </h3>
-              </main>
-              <footer>
-                <span>Matemática</span>
-                <div>
-                  <span>Ricardo</span>
-                  <span>0/100</span>
-                </div>
-              </footer>
-            </div>
+            <TaskCard type={1} alt="Fundo azul escuro" />
           </li>
           <li>
-            <div className={classesAside.cardTask}>
-              <header className={classesAside.cardTaskHeader}>
-                <div>
-                  <img src={IconTimer} alt="Relógio" />
-                  <span>Até 02/06 8h30</span>
-                </div>
-                <img src={IconSuccessCloud} alt="Nuvem" />
-              </header>
-              <main>
-                <h3>
-                  Lista 03 - Física Moderna - Modulo 1 - Modulo 2 - Aula 4
-                </h3>
-              </main>
-              <footer>
-                <span>Matemática</span>
-                <div>
-                  <span>Ricardo</span>
-                  <span>0/100</span>
-                </div>
-              </footer>
-            </div>
+            <TaskCard type={2} alt="Fundo azul claro" />
+          </li>
+          <li>
+            <TaskCard type={1} alt="Fundo azul escuro" />
           </li>
         </ul>
       </div>
