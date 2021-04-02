@@ -28,7 +28,7 @@ const useToogleButtonStyle = createUseStyles(theme => ({
         background: '#fff',
         borderRadius: '50%',
         cursor: 'pointer',
-        transition: '0.2s linear',
+        transition: 'transform 0.2s linear',
       },
     },
   },
