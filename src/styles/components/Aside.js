@@ -1,10 +1,10 @@
 import { createUseStyles } from 'react-jss'
 
-const useAsideStyles = createUseStyles({
+const useAsideStyles = createUseStyles(theme => ({
   tasks: {
     gridColumn: 'span 4',
     gridRow: '2 / 4',
-    background: '#DCECFA',
+    background: theme.aside.background,
     borderRadius: 6,
 
     '@media(max-width: 900px)': {
@@ -35,10 +35,10 @@ const useAsideStyles = createUseStyles({
       padding: '0.75rem 0 0.75rem 0.75rem',
       width: '100%',
       fontSize: '1rem',
-      border: '1px solid #D5D5D5',
+      border: `1px solid ${theme.aside.input.border}`,
       borderRadius: 6,
-      background: '#F8F8F8',
-      color: '#7F8182',
+      background: theme.aside.input.background,
+      color: theme.aside.input.text,
     },
 
     '& > button': {
@@ -46,8 +46,8 @@ const useAsideStyles = createUseStyles({
       right: 1,
       height: '2.6875rem',
       width: '2.6875rem',
-      background: '#F8F8F8',
-      borderLeft: '1px solid #D5D5D5',
+      background: theme.aside.input.background,
+      borderLeft: `1px solid ${theme.aside.input.border}`,
       borderTopRightRadius: 6,
       borderBottomRightRadius: 6,
       display: 'inline-flex',
@@ -57,6 +57,7 @@ const useAsideStyles = createUseStyles({
       '& > img': {
         width: '1.25rem',
         height: '1.25rem',
+        color: theme.aside.input.text,
       },
     },
   },
@@ -90,7 +91,7 @@ const useAsideStyles = createUseStyles({
     padding: 8,
     width: '100%',
     fontSize: '1rem',
-    color: '#414042',
+    color: theme.aside.tab.text,
     background: 'transparent',
     position: 'relative',
 
@@ -106,6 +107,6 @@ const useAsideStyles = createUseStyles({
   tabActive: {
     color: '#339CF7',
   },
-})
+}))
 
 export { useAsideStyles }

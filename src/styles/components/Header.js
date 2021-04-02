@@ -8,7 +8,6 @@ const useHeaderStyles = createUseStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    color: '#414042',
 
     '& > div': {
       display: 'flex',

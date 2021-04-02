@@ -1,16 +1,15 @@
 import { createUseStyles } from 'react-jss'
 
-const useToogleButtonStyle = createUseStyles({
+const useToogleButtonStyle = createUseStyles(theme => ({
   toggleButton: {
     marginLeft: '1.25rem',
     height: '1.875rem',
     width: '3.75rem',
     borderRadius: '1.5rem',
-    background: '#C4C4C4',
     display: 'flex',
     alignItems: 'center',
     position: 'relative',
-    cursor: 'pointer',
+    background: theme.toggleButton.background,
 
     '& > div': {
       width: '100%',
@@ -33,6 +32,22 @@ const useToogleButtonStyle = createUseStyles({
       },
     },
   },
-})
+
+  active: {
+    '& > div > span': {
+      transform: 'translateX(130%)',
+
+      '@media(max-width: 768px)': {
+        transform: 'translateX(110%)',
+      },
+    },
+  },
+
+  notActive: {
+    '& > div > span': {
+      transform: 'translateX(0)',
+    },
+  },
+}))
 
 export { useToogleButtonStyle }

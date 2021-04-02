@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-const useGlobalStyles = createUseStyles({
+const useGlobalStyles = createUseStyles(theme => ({
   '@global': {
     '*': {
       padding: 0,
@@ -44,6 +44,10 @@ const useGlobalStyles = createUseStyles({
       html: {
         fontSize: '90%',
       },
+
+      'html, body, #root': {
+        height: 'auto',
+      },
     },
 
     '@media(max-width: 768px)': {
@@ -52,31 +56,12 @@ const useGlobalStyles = createUseStyles({
       },
     },
 
-    '@media(max-width: 375px)': {
+    '@media(max-width: 400px)': {
       html: {
         fontSize: '75%',
       },
     },
   },
-
-  container: {
-    margin: '0 auto',
-    width: 'min(1140px, 95vw)',
-    display: 'grid',
-    gridTemplateColumns: 'repeat(12, 1fr)',
-    gridTemplateRows: 'auto 1fr auto',
-    columnGap: '0.75rem',
-
-    '@media (max-width: 900px)': {
-      width: '75vw',
-      display: 'flex',
-      flexDirection: 'column',
-    },
-
-    '@media (max-width: 768px)': {
-      width: '90vw',
-    },
-  },
-})
+}))
 
 export { useGlobalStyles }

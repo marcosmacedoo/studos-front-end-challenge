@@ -1,12 +1,12 @@
 import { createUseStyles } from 'react-jss'
 
-const useFooterStyle = createUseStyles({
+const useFooterStyle = createUseStyles(theme => ({
   footer: {
     paddingBottom: '0.5rem',
     gridColumn: 'span 8',
     display: 'flex',
     justifyContent: 'center',
-    color: '#A7A9AB',
+    color: theme.footer.text,
 
     '& > div': {
       display: 'flex',
@@ -23,6 +23,7 @@ const useFooterStyle = createUseStyles({
     '& img': {
       width: '1rem',
       height: '1rem',
+      color: theme.footer.text,
       cursor: 'pointer',
     },
 
@@ -30,6 +31,6 @@ const useFooterStyle = createUseStyles({
       marginRight: '1rem',
     },
   },
-})
+}))
 
 export { useFooterStyle }

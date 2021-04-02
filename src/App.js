@@ -1,20 +1,20 @@
-import React from 'react'
-import { Header } from './components/Header'
-import { NavBar } from './components/NavBar'
-import { Aside } from './components/Aside'
-import { Footer } from './components/Footer'
-import { useGlobalStyles } from './styles/Global'
+import React, { useContext } from 'react'
+import { ThemeProvider } from 'theming'
+import { Main } from './components/Main'
+import { GlobalContext } from './context/GlobalContext'
+import { dark, light } from './styles/themes'
 
 function App() {
-  const classesGlobal = useGlobalStyles()
+  const { themeActive } = useContext(GlobalContext)
+
+  function getThemeActive(themeActive) {
+    return themeActive === 'light' ? light : dark
+  }
 
   return (
-    <main className={classesGlobal.container}>
-      <Header />
-      <NavBar />
-      <Aside />
-      <Footer />
-    </main>
+    <ThemeProvider theme={getThemeActive(themeActive)}>
+      <Main />
+    </ThemeProvider>
   )
 }
 
