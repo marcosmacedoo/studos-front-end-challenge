@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ThemeProvider } from 'theming'
-import { Main } from './components/Main'
+import { Home } from './pages/Home'
 import { GlobalContext } from './context/GlobalContext'
 import { dark, light } from './styles/themes'
 
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <ThemeProvider theme={getThemeActive(themeActive)}>
-      <Main />
+      <Home />
     </ThemeProvider>
   )
 }

@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-const useMainStyles = createUseStyles(theme => ({
+const useHomeStyles = createUseStyles(theme => ({
   wrapper: {
     height: '100%',
     width: '100%',
@@ -35,4 +35,4 @@ const useMainStyles = createUseStyles(theme => ({
   },
 }))
 
-export { useMainStyles }
+export { useHomeStyles }
