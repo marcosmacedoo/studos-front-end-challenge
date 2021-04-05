@@ -18,6 +18,7 @@ function ToggleButton(props) {
         classesToogleButton.toggleButton
       } ${getClassStateToggleButton(themeActive)}`}
       onClick={changeTheme}
+      id="toggle-button"
     >
       <div>
         <span></span>

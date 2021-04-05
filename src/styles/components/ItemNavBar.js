@@ -29,7 +29,7 @@ const useItemNavBarStyles = createUseStyles({
       alignItems: 'center',
       justifyContent: 'space-between',
 
-      '& > strong': {
+      '& > h3': {
         fontSize: '1.125rem',
         color: '#fff',
         maxWidth: '5rem',

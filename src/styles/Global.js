@@ -13,10 +13,6 @@ const useGlobalStyles = createUseStyles(theme => ({
       height: '100%',
     },
 
-    body: {
-      background: 'white',
-    },
-
     '#root': {
       display: 'flex',
     },
@@ -61,6 +57,15 @@ const useGlobalStyles = createUseStyles(theme => ({
         fontSize: '75%',
       },
     },
+  },
+
+  gone: {
+    width: 0,
+    height: 0,
+    position: 'absolute',
+    left: '-9999rem',
+    visibility: 'hidden',
+    opacity: 0,
   },
 }))
 

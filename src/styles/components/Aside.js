@@ -24,8 +24,12 @@ const useAsideStyles = createUseStyles(theme => ({
     },
   },
 
-  inputGroup: {
+  form: {
     margin: '0.75rem 0',
+    width: '100%',
+  },
+
+  inputGroup: {
     width: '100%',
     position: 'relative',
     display: 'flex',

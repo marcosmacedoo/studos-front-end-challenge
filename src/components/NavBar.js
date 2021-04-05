@@ -1,12 +1,15 @@
 import React from 'react'
 import { ItemNavBar } from '../components/ItemNavBar'
 import { useNavBarStyles } from '../styles/components/NavBar'
+import { useGlobalStyles } from '../styles/Global'
 
 function NavBar() {
   const classesNavBar = useNavBarStyles()
+  const classesGlobal = useGlobalStyles()
 
   return (
     <section className={classesNavBar.sectionNavBar}>
+      <h2 className={classesGlobal.gone}>Seção de Navegação</h2>
       <nav>
         <ul>
           <li>

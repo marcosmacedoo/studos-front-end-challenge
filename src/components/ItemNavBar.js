@@ -22,13 +22,13 @@ function ItemNavBar(props) {
   const classesItemNavBar = useItemNavBarStyles(props)
 
   return (
-    <div className={classesItemNavBar.itemNavBar}>
+    <article className={classesItemNavBar.itemNavBar}>
       <img src={getBackgroundImage(props)} alt={props.alt} />
       <div>
-        <strong>{props.title}</strong>
+        <h3>{props.title}</h3>
         <img src={ArrowLeft} alt="Seta para direita" />
       </div>
-    </div>
+    </article>
   )
 }
 

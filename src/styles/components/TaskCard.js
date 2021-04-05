@@ -15,7 +15,7 @@ const useTaskCardStyle = createUseStyles({
       borderRadius: 6,
     },
 
-    '& > div': {
+    '& > article': {
       padding: 12,
       width: '100%',
       height: '100%',

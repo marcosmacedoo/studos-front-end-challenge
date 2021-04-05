@@ -8,27 +8,28 @@ const useFooterStyle = createUseStyles(theme => ({
     justifyContent: 'center',
     color: theme.footer.text,
 
-    '& > div': {
+    '& > ul': {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-    },
 
-    '& span': {
-      marginRight: '1rem',
-      fontSize: '0.8125rem',
-      cursor: 'pointer',
-    },
+      '& li': {
+        fontSize: '0.8125rem',
+        cursor: 'pointer',
+      },
 
-    '& img': {
-      width: '1rem',
-      height: '1rem',
-      color: theme.footer.text,
-      cursor: 'pointer',
-    },
+      '& li:hover': {
+        filter: 'brightness(1.15)',
+      },
 
-    '& img:nth-child(4)': {
-      marginRight: '1rem',
+      '& li:not(:last-child)': {
+        marginRight: '1rem',
+      },
+
+      '& li img': {
+        width: '1rem',
+        height: '1rem',
+      },
     },
   },
 }))

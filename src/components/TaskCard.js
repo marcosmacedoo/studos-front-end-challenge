@@ -19,7 +19,7 @@ function TaskCard(props) {
   return (
     <div className={classesTaskCard.taskCard}>
       <img src={getPathBackgroundTaskCard(props)} alt={props.alt} />
-      <div>
+      <article>
         <header>
           <div>
             <img src={IconTimer} alt="Ícone de relógio" />
@@ -40,7 +40,7 @@ function TaskCard(props) {
             <span>0/100</span>
           </div>
         </footer>
-      </div>
+      </article>
     </div>
   )
 }
