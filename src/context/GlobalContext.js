@@ -4,6 +4,7 @@ const GlobalContext = createContext()
 
 function GlobalContextProvider({ children }) {
   const [themeActive, setThemeActive] = useState('light')
+  const [tabActiveDataId, setTabActiveDataId] = useState('new-tasks')
 
   function saveThemeLocalStorage(themeActive) {
     localStorage.setItem('themeActive', themeActive)
@@ -19,6 +20,10 @@ function GlobalContextProvider({ children }) {
     }
   }
 
+  function changeTabActiveDataId(tabActiveDataId) {
+    setTabActiveDataId(tabActiveDataId)
+  }
+
   useEffect(() => {
     const theme = localStorage.getItem('themeActive') || 'light'
 
@@ -26,7 +31,14 @@ function GlobalContextProvider({ children }) {
   }, [])
 
   return (
-    <GlobalContext.Provider value={{ themeActive, changeTheme }}>
+    <GlobalContext.Provider
+      value={{
+        themeActive,
+        changeTheme,
+        tabActiveDataId,
+        changeTabActiveDataId,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   )

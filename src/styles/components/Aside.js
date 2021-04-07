@@ -14,6 +14,9 @@ const useAsideStyles = createUseStyles(theme => ({
 
   content: {
     padding: '1rem',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
 
     '& > h2': {
       fontSize: '1.25rem',
@@ -64,52 +67,6 @@ const useAsideStyles = createUseStyles(theme => ({
         color: theme.aside.input.text,
       },
     },
-  },
-
-  tabs: {
-    marginBottom: 16,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-
-    '& > div': {
-      position: 'relative',
-
-      '&:after': {
-        content: '""',
-        height: 2,
-        width: '100%',
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        background: '#339CF7',
-      },
-    },
-
-    '& > div, > button': {
-      flex: 1,
-    },
-  },
-
-  tab: {
-    padding: 8,
-    width: '100%',
-    fontSize: '1rem',
-    color: theme.aside.tab.text,
-    background: 'transparent',
-    position: 'relative',
-
-    '&:nth-child(2)': {
-      flex: 2,
-
-      '@media(max-width: 900px)': {
-        flex: 1,
-      },
-    },
-  },
-
-  tabActive: {
-    color: '#339CF7',
   },
 }))
 

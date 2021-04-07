@@ -1,16 +1,13 @@
 import React from 'react'
+import { Tabs } from '../components/Tabs'
+import { TaskList } from '../components/TaskList'
 import { useAsideStyles } from '../styles/components/Aside'
-import { TaskCard } from '../components/TaskCard'
-import IconSearchSmall from '../assets/search-small.svg'
 import { useGlobalStyles } from '../styles/Global'
+import IconSearchSmall from '../assets/search-small.svg'
 
 function Aside() {
   const classesAside = useAsideStyles()
   const classesGlobal = useGlobalStyles()
-  const altsImages = {
-    altTaskCardType1: 'Fundo de cor azul escuro',
-    altTaskCardType2: 'Fundo de cor azul claro',
-  }
 
   return (
     <aside className={classesAside.tasks}>
@@ -35,27 +32,8 @@ function Aside() {
           </div>
         </form>
 
-        <div className={classesAside.tabs}>
-          <div>
-            <button className={`${classesAside.tab} ${classesAside.tabActive}`}>
-              Novas
-            </button>
-          </div>
-          <button className={classesAside.tab}>Em andamento</button>
-          <button className={classesAside.tab}>Finalizadas</button>
-        </div>
-
-        <ul>
-          <li>
-            <TaskCard type={1} alt={altsImages.altTaskCardType1} />
-          </li>
-          <li>
-            <TaskCard type={2} alt={altsImages.altTaskCardType2} />
-          </li>
-          <li>
-            <TaskCard type={1} alt={altsImages.altTaskCardType1} />
-          </li>
-        </ul>
+        <Tabs />
+        <TaskList />
       </div>
     </aside>
   )
