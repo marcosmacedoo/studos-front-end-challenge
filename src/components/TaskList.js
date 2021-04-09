@@ -20,11 +20,25 @@ function TaskList() {
       }
     })
 
+    const compareDates = (taskOne, taskTwo) => {
+      if (taskOne.date > taskTwo.date) {
+        return 1
+      } else if (taskOne.date < taskTwo.date) {
+        return -1
+      }
+
+      return 0
+    }
+
+    const tasksOrderedByDate = tasksWithChangedDates
+      .sort(compareDates)
+      .reverse()
+
     const newTasks = []
     const tasksInProgress = []
     const completedTasks = []
 
-    tasksWithChangedDates.forEach(task =>
+    tasksOrderedByDate.forEach(task =>
       task.started ? tasksInProgress.push(task) : newTasks.push(task),
     )
 
