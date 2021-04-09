@@ -32,7 +32,7 @@
         "type": 2
       },
       {
-        "date": "15/01/2021",
+        "date": "2021-01-15T03:00:00.000Z",
         "started": true,
         "title": "Lista 03 - Inglês - Modulo 1 - Aula 7",
         "subject": "Idiomas",
@@ -62,7 +62,7 @@
         "type": 2
       },
       {
-        "date": "20-01-2021",
+        "date": "2021-01-20T03:00:00.000Z",
         "started": false,
         "title": "Lista 03 - Inglês - Modulo 1 - Aula 8",
         "subject": "Idiomas",
@@ -82,7 +82,7 @@
         "type": 1
       },
       {
-        "date": "2021-01-08",
+        "date": "2021-01-08T03:00:00.000Z",
         "started": true,
         "title": "Lista 04 - Filosofia Moderna - Modulo 2 - Aula 3",
         "subject": "Filosofia",

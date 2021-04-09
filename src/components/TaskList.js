@@ -2,15 +2,50 @@ import React, { useEffect, useState, useContext } from 'react'
 import { TaskCard } from '../components/TaskCard'
 import { useTaskListStyle } from '../styles/components/TaskList'
 import { GlobalContext } from '../context/GlobalContext'
-import tasksJSON from '../data/tasks.json'
+import dataJSON from '../data/tasks.json'
 
 function TaskList() {
   const classesTaskList = useTaskListStyle()
-  const [tasks, setTasks] = useState(tasksJSON.data.entities)
-  const [newTasks, setNewTasks] = useState([])
-  const [tasksInProgress, setTasksInProgress] = useState([])
+  const [tasks, setTasks] = useState([])
   const [taskActive, setTaskActive] = useState([])
   const { tabActiveDataId } = useContext(GlobalContext)
+
+  useEffect(() => {
+    const tasksJSON = dataJSON.data.entities
+
+    const tasksWithChangedDates = tasksJSON.map(task => {
+      return {
+        ...task,
+        date: new Date(task.date),
+      }
+    })
+
+    const newTasks = []
+    const tasksInProgress = []
+    const completedTasks = []
+
+    tasksWithChangedDates.forEach(task =>
+      task.started ? tasksInProgress.push(task) : newTasks.push(task),
+    )
+
+    setTasks([
+      { dataId: 'new-tasks', data: newTasks },
+      { dataId: 'tasks-in-progress', data: tasksInProgress },
+      { dataId: 'completed-tasks', data: completedTasks },
+    ])
+  }, [])
+
+  useEffect(() => {
+    if (tasks.length > 0) {
+      const [filteredTask] = tasks.filter(
+        task => task.dataId === tabActiveDataId,
+      )
+
+      setTaskActive(filteredTask.data)
+    } else {
+      setTaskActive([])
+    }
+  }, [tasks, tabActiveDataId])
 
   function getAltImage(type) {
     let alt = 'Fundo azul escuro'
@@ -22,38 +57,10 @@ function TaskList() {
     return alt
   }
 
-  useEffect(() => {
-    const filteredNewTasks = tasks.filter(task => !task.started)
-    setNewTasks(filteredNewTasks)
-
-    const filteredTasksInProgress = tasks.filter(task => task.started)
-    setTasksInProgress(filteredTasksInProgress)
-  }, [])
-
-  useEffect(() => {
-    setTasks([
-      { dataId: 'new-tasks', data: newTasks },
-      { dataId: 'tasks-in-progress', data: tasksInProgress },
-      { dataId: 'completed-tasks', data: [] },
-    ])
-  }, [newTasks, tasksInProgress])
-
-  useEffect(() => {
-    const [filteredTaskActive] = tasks.filter(
-      task => task.dataId === tabActiveDataId,
-    )
-
-    if (filteredTaskActive) {
-      setTaskActive(filteredTaskActive.data)
-    } else {
-      setTaskActive([])
-    }
-  }, [taskActive, tabActiveDataId])
-
   return (
     <ul className={classesTaskList.taskList}>
       {taskActive.map((task, index) => (
-        <li key={index}>
+        <li key={String(index)}>
           <TaskCard task={{ ...task, altImage: getAltImage(task.type) }} />
         </li>
       ))}
