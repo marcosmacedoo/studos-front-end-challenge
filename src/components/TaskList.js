@@ -1,48 +1,59 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { TaskCard } from '../components/TaskCard'
-import { GlobalContext } from '../context/GlobalContext'
 import { useTaskListStyle } from '../styles/components/TaskList'
+import { GlobalContext } from '../context/GlobalContext'
+import tasksJSON from '../data/tasks.json'
 
 function TaskList() {
   const classesTaskList = useTaskListStyle()
+  const [tasks, setTasks] = useState(tasksJSON.data.entities)
+  const [newTasks, setNewTasks] = useState([])
+  const [tasksInProgress, setTasksInProgress] = useState([])
+  const [taskActive, setTaskActive] = useState([])
   const { tabActiveDataId } = useContext(GlobalContext)
-  const tasksAll = [
-    {
-      dataId: 'new-tasks',
-      data: [{ type: 1 }, { type: 1 }, { type: 1 }],
-    },
-    {
-      dataId: 'tasks-in-progress',
-      data: [{ type: 1 }, { type: 1 }, { type: 1 }, { type: 1 }, { type: 1 }],
-    },
-    {
-      dataId: 'completed-tasks',
-      data: [{ type: 2 }],
-    },
-  ]
-  const [taskActive, setTaskActive] = useState(tasksAll[0])
 
   function getAltImage(type) {
-    return type === 1 ? 'Fundo de cor azul escuro' : 'Fundo de cor azul claro'
-  }
+    let alt = 'Fundo azul escuro'
 
-  function filteredTasksAll() {
-    const [filteredTask] = tasksAll.filter(
-      task => task.dataId === tabActiveDataId,
-    )
-    return filteredTask
+    if (type === 2) {
+      alt = 'Fundo azul claro'
+    }
+
+    return alt
   }
 
   useEffect(() => {
-    const filteredTask = filteredTasksAll()
-    setTaskActive(filteredTask)
-  }, [tabActiveDataId])
+    const filteredNewTasks = tasks.filter(task => !task.started)
+    setNewTasks(filteredNewTasks)
+
+    const filteredTasksInProgress = tasks.filter(task => task.started)
+    setTasksInProgress(filteredTasksInProgress)
+  }, [])
+
+  useEffect(() => {
+    setTasks([
+      { dataId: 'new-tasks', data: newTasks },
+      { dataId: 'tasks-in-progress', data: tasksInProgress },
+    ])
+  }, [newTasks, tasksInProgress])
+
+  useEffect(() => {
+    const [filteredTaskActive] = tasks.filter(
+      task => task.dataId === tabActiveDataId,
+    )
+
+    if (filteredTaskActive) {
+      setTaskActive(filteredTaskActive.data)
+    } else {
+      setTaskActive([])
+    }
+  }, [taskActive, tabActiveDataId])
 
   return (
     <ul className={classesTaskList.taskList}>
-      {taskActive.data.map((task, index) => (
+      {taskActive.map((task, index) => (
         <li key={index}>
-          <TaskCard type={task.type} alt={getAltImage(task.type)} />
+          <TaskCard task={{ ...task, altImage: getAltImage(task.type) }} />
         </li>
       ))}
     </ul>

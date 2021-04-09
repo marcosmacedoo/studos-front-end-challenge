@@ -5,8 +5,8 @@ import BgSmallBlue from '../assets/bg-small-blue.svg'
 import IconTimer from '../assets/timer.svg'
 import IconSuccessCloud from '../assets/success-cloud.svg'
 
-function getPathBackgroundTaskCard(props) {
-  if (props.type === 1) {
+function getPathBackgroundTaskCard(type) {
+  if (type === 1) {
     return BgSmallBlue
   }
 
@@ -18,7 +18,10 @@ function TaskCard(props) {
 
   return (
     <div className={classesTaskCard.taskCard}>
-      <img src={getPathBackgroundTaskCard(props)} alt={props.alt} />
+      <img
+        src={getPathBackgroundTaskCard(props.task.type)}
+        alt={props.task.altImage}
+      />
       <article>
         <header>
           <div>
@@ -31,13 +34,15 @@ function TaskCard(props) {
           />
         </header>
         <main>
-          <h3>Lista 03 - Física Moderna - Modulo 1 - Modulo 2 - Aula 4</h3>
+          <h3>{props.task.title}</h3>
         </main>
         <footer>
-          <span>Matemática</span>
+          <span>{props.task.subject}</span>
           <div>
-            <span>Ricardo</span>
-            <span>0/100</span>
+            <span>{props.task.teacher}</span>
+            <span>
+              {props.task.questionsCompleted}/{props.task.questions}
+            </span>
           </div>
         </footer>
       </article>

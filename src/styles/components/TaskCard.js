@@ -21,6 +21,8 @@ const useTaskCardStyle = createUseStyles({
       height: '100%',
       position: 'absolute',
       top: 0,
+      display: 'flex',
+      flexDirection: 'column',
 
       '& > header': {
         display: 'flex',
@@ -42,7 +44,9 @@ const useTaskCardStyle = createUseStyles({
       },
 
       '& main': {
-        margin: '1rem 0',
+        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
 
         '& h3': {
           fontSize: '1rem',
