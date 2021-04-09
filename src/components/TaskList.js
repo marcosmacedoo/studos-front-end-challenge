@@ -34,6 +34,7 @@ function TaskList() {
     setTasks([
       { dataId: 'new-tasks', data: newTasks },
       { dataId: 'tasks-in-progress', data: tasksInProgress },
+      { dataId: 'completed-tasks', data: [] },
     ])
   }, [newTasks, tasksInProgress])
 
