@@ -16,6 +16,22 @@ function getPathBackgroundTaskCard(type) {
 function TaskCard(props) {
   const classesTaskCard = useTaskCardStyle()
 
+  function formatDate(date) {
+    const addZeroBefore = number => `0${number}`
+
+    const isNumberLessThanValue = (number, value = 10) => number < value
+
+    const formatNumber = number =>
+      isNumberLessThanValue(number) ? addZeroBefore(number) : String(number)
+
+    const day = formatNumber(date.getDate())
+    const month = formatNumber(date.getMonth() + 1)
+
+    const formattedDate = `${day}/${month}`
+
+    return formattedDate
+  }
+
   return (
     <div className={classesTaskCard.taskCard}>
       <img
@@ -26,7 +42,7 @@ function TaskCard(props) {
         <header>
           <div>
             <img src={IconTimer} alt="Ícone de relógio" />
-            <span>Até 02/06 8h30</span>
+            <span>Até {formatDate(props.task.date)} 8h30</span>
           </div>
           <img
             src={IconSuccessCloud}
