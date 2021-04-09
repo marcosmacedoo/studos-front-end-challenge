@@ -12,31 +12,32 @@ const useHeaderStyles = createUseStyles({
     '& > div': {
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'space-between',
+    },
+  },
 
-      '& > img': {
-        marginRight: '1.5rem',
-        width: '3.4375rem',
-        height: '3.4375rem',
-        borderRadius: '50%',
-
-        '@media (max-width: 768px)': {
-          marginRight: '1rem',
-        },
-      },
-
-      '& > h1': {
-        fontSize: '1.375rem',
-      },
+  contentLeft: {
+    '& > h1': {
+      fontSize: '1.375rem',
     },
 
-    '& > :nth-child(2)': {
-      '& > label': {
-        fontSize: '1rem',
+    '& > img': {
+      marginRight: '1.5rem',
+      width: '3.4375rem',
+      height: '3.4375rem',
+      borderRadius: '50%',
 
-        '@media(max-width: 768px)': {
-          visibility: 'hidden',
-        },
+      '@media (max-width: 768px)': {
+        marginRight: '1rem',
+      },
+    },
+  },
+
+  contentRight: {
+    '& > label strong': {
+      fontSize: '1rem',
+
+      '@media(max-width: 768px)': {
+        visibility: 'hidden',
       },
     },
   },

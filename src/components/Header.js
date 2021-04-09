@@ -11,11 +11,11 @@ function Header() {
   return (
     <header className={classesHeader.header}>
       <h2 className={classesGlobal.gone}>Cabeçalho</h2>
-      <div>
+      <div className={classesHeader.contentLeft}>
         <img src={Profile} alt="Profile" />
         <h1>Olá, João Paulo</h1>
       </div>
-      <div>
+      <div className={classesHeader.contentRight}>
         <label htmlFor="toggle-button">
           <strong>Modo escuro</strong>
         </label>
