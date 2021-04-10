@@ -4,6 +4,7 @@ import { TaskList } from '../components/TaskList'
 import { GlobalContext } from '../context/GlobalContext'
 import { useAsideStyles } from '../styles/components/Aside'
 import { useGlobalStyles } from '../styles/Global'
+import { removeWhiteSpacesAll } from '../utils/Utils'
 import IconSearchSmall from '../assets/search-small.svg'
 
 function Aside() {
@@ -20,8 +21,6 @@ function Aside() {
     const [{ data }] = taskLists.filter(
       taskList => taskList.dataId === taskActive.dataId,
     )
-
-    const removeWhiteSpacesAll = string => string.split(' ').join('')
 
     const filteredTask = data.filter(task => {
       const taskTitleRemovedWhiteSpaces = removeWhiteSpacesAll(

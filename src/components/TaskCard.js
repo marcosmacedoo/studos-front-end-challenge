@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTaskCardStyle } from '../styles/components/TaskCard'
+import { formatNumber } from '../utils/Utils'
 import BgSmallBlueLight from '../assets/bg-small-blue-light.svg'
 import BgSmallBlue from '../assets/bg-small-blue.svg'
 import IconTimer from '../assets/timer.svg'
@@ -17,13 +18,6 @@ function TaskCard(props) {
   const classesTaskCard = useTaskCardStyle()
 
   function formatDate(date) {
-    const addZeroBefore = number => `0${number}`
-
-    const isNumberLessThanValue = (number, value = 10) => number < value
-
-    const formatNumber = number =>
-      isNumberLessThanValue(number) ? addZeroBefore(number) : String(number)
-
     const day = formatNumber(date.getDate())
     const month = formatNumber(date.getMonth() + 1)
 

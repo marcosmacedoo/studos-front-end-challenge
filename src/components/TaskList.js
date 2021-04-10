@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import { TaskCard } from '../components/TaskCard'
 import { useTaskListStyle } from '../styles/components/TaskList'
 import { GlobalContext } from '../context/GlobalContext'
+import { compareTasksDate } from '../utils/Utils'
 import dataJSON from '../data/tasks.json'
 
 function TaskList() {
@@ -24,18 +25,8 @@ function TaskList() {
       }
     })
 
-    const compareDates = (taskOne, taskTwo) => {
-      if (taskOne.date > taskTwo.date) {
-        return 1
-      } else if (taskOne.date < taskTwo.date) {
-        return -1
-      }
-
-      return 0
-    }
-
     const tasksOrderedByDate = tasksWithChangedDates
-      .sort(compareDates)
+      .sort(compareTasksDate)
       .reverse()
 
     const newTasks = []
