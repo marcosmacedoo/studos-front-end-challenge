@@ -4,13 +4,21 @@
 
 [Abrir página](https://marcosmacedoo.github.io/studos-front-end-challenge/)
 
+![projeto](https://github.com/marcosmacedoo/studos-front-end-challenge/blob/main/.github/screenshots/pagina.png?raw=true)
+
 ## Algumas funcionalidades
 
 ### Dark Mode
 
+![Gif de Dark Mode](https://github.com/marcosmacedoo/studos-front-end-challenge/blob/main/.github/gifs/studos-dark-mode-2021-04-10_15.56.00.gif?raw=true)
+
 ### Responsividade
 
+![Gif de Responsividade](https://github.com/marcosmacedoo/studos-front-end-challenge/blob/main/.github/gifs/studos-responsividade-2021-04-10_16.01.49.gif?raw=true)
+
 ### Filtragem por busca
+
+![Gif de Filtragem por busca](https://github.com/marcosmacedoo/studos-front-end-challenge/blob/main/.github/gifs/studos-filtragem-por-input-2021-04-10_16.08.48.gif?raw=true)
 
 ## Instalação localmente
 
