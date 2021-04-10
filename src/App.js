@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { ThemeProvider } from 'react-jss'
 import { Home } from './pages/Home'
 import { GlobalContext } from './context/GlobalContext'
@@ -10,8 +10,6 @@ function App() {
   function getThemeActive(themeActive) {
     return themeActive === 'light' ? light : dark
   }
-
-  useEffect(() => {}, [])
 
   return (
     <ThemeProvider theme={getThemeActive(themeActive)}>
