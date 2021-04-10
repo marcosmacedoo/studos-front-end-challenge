@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { TaskCard } from '../components/TaskCard'
 import { useTaskListStyle } from '../styles/components/TaskList'
 import { GlobalContext } from '../context/GlobalContext'
@@ -6,9 +6,13 @@ import dataJSON from '../data/tasks.json'
 
 function TaskList() {
   const classesTaskList = useTaskListStyle()
-  const [tasks, setTasks] = useState([])
-  const [taskActive, setTaskActive] = useState([])
-  const { tabActiveDataId } = useContext(GlobalContext)
+  const {
+    tabActiveDataId,
+    taskActive,
+    taskLists,
+    changeTaskActive,
+    changeTaskLists,
+  } = useContext(GlobalContext)
 
   useEffect(() => {
     const tasksJSON = dataJSON.data.entities
@@ -42,7 +46,7 @@ function TaskList() {
       task.started ? tasksInProgress.push(task) : newTasks.push(task),
     )
 
-    setTasks([
+    changeTaskLists([
       { dataId: 'new-tasks', data: newTasks },
       { dataId: 'tasks-in-progress', data: tasksInProgress },
       { dataId: 'completed-tasks', data: completedTasks },
@@ -50,16 +54,16 @@ function TaskList() {
   }, [])
 
   useEffect(() => {
-    if (tasks.length > 0) {
-      const [filteredTask] = tasks.filter(
+    if (taskLists.length > 0) {
+      const [filteredTask] = taskLists.filter(
         task => task.dataId === tabActiveDataId,
       )
 
-      setTaskActive(filteredTask.data)
+      changeTaskActive(filteredTask)
     } else {
-      setTaskActive([])
+      changeTaskActive({ dataId: '', data: [] })
     }
-  }, [tasks, tabActiveDataId])
+  }, [taskLists, tabActiveDataId])
 
   function getAltImage(type) {
     let alt = 'Fundo azul escuro'
@@ -73,7 +77,7 @@ function TaskList() {
 
   return (
     <ul className={classesTaskList.taskList}>
-      {taskActive.map((task, index) => (
+      {taskActive.data.map((task, index) => (
         <li key={String(index)}>
           <TaskCard task={{ ...task, altImage: getAltImage(task.type) }} />
         </li>
